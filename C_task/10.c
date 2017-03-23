@@ -15,6 +15,6 @@ int main()
 	printf("Введите значение x и количество разрядов n: ");
 	scanf("%u %u", &x, &n);
 	x = rightrot(x, n);
-	printf("%u", x);
+	printf("%u\n", x);
 	return 0;
 }
