@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <conio.h>
+#include <stdio.h
 #include <locale.h>
 
 unsigned int rightrot(unsigned int x,unsigned int n)
@@ -17,6 +16,5 @@ int main()
 	scanf("%u %u", &x, &n);
 	x = rightrot(x, n);
 	printf("%u", x);
-	_getch();
 	return 0;
 }
