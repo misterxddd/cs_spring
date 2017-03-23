@@ -7,7 +7,6 @@ int main()
 	printf("0%i.%i\n", day, month);
 	day = month;
 	month = a;
-	printf("%i.0%i", day, month);
-	getchar();
+	printf("%i.0%i\n", day, month);
 	return 0;
 }
