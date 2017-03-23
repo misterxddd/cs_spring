@@ -4,6 +4,6 @@ int main()
 {
 	printf("Hello, Mbamti!\n");
 
-	getchar();
 	return 0;
 }
+
