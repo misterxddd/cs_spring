@@ -1,6 +1,5 @@
 #include <stdio.h>
-#include <locale.h>
-#include <conio.h>
+
 
 int main()
 {
@@ -11,6 +10,5 @@ int main()
 	d = (a*a*y + a*y*y + a*z*z + b*b*y) / ((a + y)*(a + y) + (b + z)*(b + z));
 	k = (a*a*z + b*b*z + b*y*y + b*z*z) / ((a + y)*(a + y) + (b + z)*(b + z));
 	printf("Ответ: %.4f+%.4fi", d, k);
-	_getch();
 	return 0;
 }
