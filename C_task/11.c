@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <conio.h>
 #include <stdlib.h>
 #include <locale.h>
 
@@ -15,6 +14,5 @@ int main()
 	dvach = strtol(shosh, &pos, 2);
 
 	printf("Ваше число в десятичной форме записи: %ld\n", dvach);
-	_getch();
 	return 0;
 }
