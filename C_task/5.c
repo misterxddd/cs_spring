@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <conio.h>
 #include <locale.h>
 
 int main()
@@ -17,6 +16,5 @@ int main()
 	} while (C <= t2);
 
 		
-	_getch();
 	return 0;
 }
