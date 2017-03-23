@@ -1,12 +1,11 @@
 #include <stdio.h>
-#include <conio.h>
 
 
 int main()
 {
 	float z, a, b, d;
 	char c;
-	lol:
+	int i;
 	scanf("%f%c%f", &a, &c, &b);
 	switch (c)
 	{
@@ -33,7 +32,7 @@ int main()
 			z = a;
 			if (b != 0)
 			{
-				for (int i = 1; i < b; i++)
+				for ( i = 1; i < b; i++)
 				{
 					a *= z;
 				}
@@ -47,8 +46,5 @@ int main()
 			d = 0.01*a*b;
 	}
 	printf("%f\n\n", d);
-	d = 0;
-	z = 0;
-	_getch();
-	goto lol;
+	return 0;
 }
