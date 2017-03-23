@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <conio.h>
 #include <locale.h>
 
 #define bool int
@@ -19,9 +18,9 @@ int main()
 	printf("Введите путь к вашему файлу (Например: C:/Papka/file.txt): ");
 	gets(fif);
 	if (fif == NULL)
-		printf("Dаш файл пустой)");
+		printf("Ваш файл пустой)");
 	shosh = fopen(fif, "rb");
-	int fsize = 0, counter = 0, f = 0, index = 0;
+	int fsize = 0, counter = 0, f = 0, index = 0, i = 0, j = 0;
 	char * buffer;
 	char * dog;
 
@@ -33,13 +32,13 @@ int main()
 	fclose(shosh);
 	f = fsize;
 	dog = (char*)malloc(fsize);
-	for (int i = 0; i < fsize; i++)
+	for (i = 0; i < fsize; i++)
 	{
 		if (buffer[i] == '"') checker1 = !checker1;
 		if (buffer[i] == '/' && buffer[i+1] == '/' && checker1)
 		{
 			counter += 2;
-			for (int j = i + 2; j < fsize;j++)
+			for (j = i + 2; j < fsize;j++)
 			{
 				if (buffer[j] == 0x0d && buffer[j + 1] == 0x0a)
 				{
@@ -55,7 +54,7 @@ int main()
 		else if (buffer[i] == '/' && buffer[i + 1] == '*' && checker1)
 		{
 			counter += 2;
-			for (int j = i + 2; j < fsize; j++)
+			for (j = i + 2; j < fsize; j++)
 			{
 				if (buffer[j] == '*' && buffer[j + 1] == '/')
 				{
@@ -81,6 +80,5 @@ int main()
 	fclose(kek);
 	free(buffer);
 	printf("Ваш файл был изменен!\n");
-	_getch();
 	return 0;
 }
