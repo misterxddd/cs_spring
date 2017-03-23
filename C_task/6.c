@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <conio.h>
 #include <locale.h>
 
 int main()
@@ -11,13 +10,11 @@ int main()
 	if (a == 0)
 	{
 		printf("Факториал числа: 1");
-		_getch();
 		return 0;
 	}
 	else if (a < 0)
 	{
 		printf("Ошибка!!!");
-		_getch();
 		return 0;
 	}
 	else
@@ -28,8 +25,7 @@ int main()
 			b *= a;
 			a--;
 		}
-		printf("Факториал числа: %i", b);
+		printf("Факториал числа: %i\n", b);
 	}
-	_getch();
 	return 0;
 }
