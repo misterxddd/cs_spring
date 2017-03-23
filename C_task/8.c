@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <conio.h>
 #include <locale.h>
 #include <math.h>
 
@@ -25,6 +24,5 @@ int main()
 	{
 		printf("Вещественных корней нет!!!");
 	}
-	_getch();
 	return 0;
 }
