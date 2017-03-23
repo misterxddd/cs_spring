@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <conio.h>
 #include <locale.h>
 
 
@@ -34,6 +33,5 @@ main(int argc, char * argv[] )
 	fclose(sors);
 	fclose(syrs);
 	free(buffer);
-	_getch();
 	return 0;
 }
