@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <conio.h>
 #include <locale.h>
 
 
@@ -7,20 +6,21 @@ int main()
 {
 	setlocale(0, "russian");
 	char shosh[255], key[100];
+	int i;
 	FILE*kek;
 	FILE*lol;
 	int fsize = 0, dsize = 0;
 	char * buffer;
 	char * dog;
-	for (int i = 0; i < 255; i++)
+	for (i = 0; i < 255; i++)
 		shosh[i] = '\0';
-	for (int i = 0; i < 100; i++)
+	for (i = 0; i < 100; i++)
 		key[i] = '\0';
 	printf("Введите ваш ключ: ");
 	gets(key);
 	printf("Введите путь к вашему файлу (Например: C:/Papka/file.xls): ");
 	gets(shosh);
-	for (int i = 0; ;i++)
+	for (i = 0; ;i++)
 	{
 		if (key[i] == '\0') break;
 		dsize++;
@@ -33,7 +33,7 @@ int main()
 	fread(buffer, 1, fsize, kek);
 	fclose(kek);
 	int index = 0;
-	for (int i = 0; i < fsize; i++)
+	for (i = 0; i < fsize; i++)
 	{
 		if (index == dsize) index = 0;
 		buffer[i] ^= key[index];
@@ -45,7 +45,6 @@ int main()
 	
 	fclose(lol);
 	free(buffer);
-	printf("Теперь ваш файл зашифрован/расшифрован! Чтобы его расшифровать/зашифровать используйте свой ключ еще раз хД");
-	_getch();
+	printf("Теперь ваш файл зашифрован/расшифрован! Чтобы его расшифровать/зашифровать используйте свой ключ еще раз хД\n");
 	return 0;
 }
