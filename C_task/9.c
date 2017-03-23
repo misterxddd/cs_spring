@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <conio.h>
 #include <locale.h>
 
 
@@ -22,8 +21,7 @@ int main()
 	printf("Введите натуральное число N: ");
 	scanf("%i", &N);
 	if (N <= 0)
-		printf("Ошибочка!");
+		printf("Ошибочка!\n");
 	fib(N, 0, 1);
-	_getch();
 	return 0;
 }
