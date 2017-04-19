@@ -82,7 +82,7 @@ void SetByIndex(string * str, char symbol, int index)
 
 void AddToTheEnd(string * str, char symbol)
 {
-	string * acc;
+	string * acc = NULL;
 	while (str)
 	{
 		acc = str;
@@ -148,7 +148,7 @@ void DeleteItem(string * str, int index)
 
 void DeleteLast(string * str)
 {
-	string * acc;
+	string * acc = NULL;
 	string * acc1 = str;
 	while (str)
 	{
