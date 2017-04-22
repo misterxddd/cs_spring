@@ -13,14 +13,15 @@ int main()
 	FILE * shosh;
 	FILE * kek;
 	char fif[255];
-	for (int i = 0; i < 255; i++)
+	int i = 0;
+	for (i = 0; i < 255; i++)
 		fif[i] = '\0';
 	printf("Введите путь к вашему файлу (Например: C:/Papka/file.txt): ");
 	gets(fif);
 	if (fif == NULL)
 		printf("Ваш файл пустой)");
 	shosh = fopen(fif, "rb");
-	int fsize = 0, counter = 0, f = 0, index = 0, i = 0, j = 0;
+	int fsize = 0, counter = 0, f = 0, index = 0, j = 0;
 	char * buffer;
 	char * dog;
 
