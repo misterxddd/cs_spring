@@ -97,7 +97,7 @@ int main()
 		printf("Хотите удалить весь массив? (Нажмите '1', если хотите) ");
 		scanf("%i", &del);
 		if (del == 1)
-			DeleteAll(str, len);
+			DeleteAll(str);
 		goto GT;
 	}
 
