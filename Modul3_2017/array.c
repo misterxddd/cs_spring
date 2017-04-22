@@ -169,15 +169,24 @@ void DeleteLast(string * str)
 }
 
 
-void DeleteAll(string * str, int len)
+void DeleteAll(string * str)
 {
+	int len = Lenght(str);
 	string * acc;
+	string * acc1 = NULL;
+	acc = str;
 	int i = 0;
-	for (i = 1; i < len; i++)
+	while (len != 1)
 	{
 		acc = str;
-		str = str->next;
+		for (int i = 0; i < len - 1; i++)
+		{
+			acc1 = acc;
+			acc = acc->next;
+		}
+		acc1->next = NULL;
 		free(acc);
+		len--;
 	}
 	free(str);
 	printf("Ваша строчка пуста\n");
