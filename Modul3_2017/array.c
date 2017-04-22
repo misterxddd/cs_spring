@@ -115,9 +115,9 @@ void AddNewItem(string * str, int index, char symbol)
 void DeleteItem(string * str, int index)
 {
 	int count = 1;
-	string * acc;
-	string * acc1;
-	string * acc2;
+	string * acc = NULL;
+	string * acc1 = NULL;
+	string * acc2 = NULL;
 	string * acc3 = str;
 	while (str)
 	{
@@ -172,7 +172,7 @@ void DeleteLast(string * str)
 void DeleteAll(string * str)
 {
 	int len = Lenght(str);
-	string * acc;
+	string * acc = NULL;
 	string * acc1 = NULL;
 	acc = str;
 	int i = 0;
@@ -195,7 +195,7 @@ void DeleteAll(string * str)
 
 void Sex(string * str, string * str1)
 {
-	string * acc;
+	string * acc = NULL;
 	while (str)
 	{
 		acc = str;
@@ -219,7 +219,7 @@ void function(char * symbol1, char * symbol2)
 
 void Sort(string * str, void(*function)(char*, char*))
 {
-	string * acc;
+	string * acc = NULL;
 	string * copystr = str;
 	int i = 0;
 	int j = 0;
