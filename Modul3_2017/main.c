@@ -8,39 +8,53 @@ int main()
 	setlocale(0, "russian");
 
 	int index, len, count, z, ind, boom, del, value, sort;
-	char lol[100], c, x, olo[100], hud;
+	char lol[100], ball, x, olo[100], hud;
 	
 	CreateStr:
 	printf("Введите Ваш массив типа char: ");
 	gets(lol);
 	string * str = CreateString(lol);
 
-	printf("\nПрограмма разбита на несколько блоков (Блок1, Блок2, Блок3). В каждом блоке программа выполняет по 3-5 функции из задания.\n");
 	GT:
-	printf("Если вы хотите использовать какой-нибудь блок, на пишите '1', '2' или '3'.\nДля выхода из программы напишите '0'.\n");
-	printf("Для создания нового массива напишите '4'.\n");
+	printf("\nВыберите действие, которое хотите совершить:\n");
+	printf("Для получения размера массива напишите '1'.\n");
+	printf("Для получения элемента по индексу напишите '2'.\n");
+	printf("Для того, чтобы задать i-й элемент напишите '3'.\n");
+	printf("Для добавления нового элемента в конец массива напишите '4'.\n");
+	printf("Для добавления нового элемента после i-го напишите '5'.\n");
+	printf("Для удаления i-го элемента напишите '6'.\n");
+	printf("Для удаления последнего элемента напишите '7'.\n");
+	printf("Для сортировки массива с помощью таблицы ASCII напишите '8'.\n");
+	printf("Если вы хотите слить два массива напишите '9'.\n");
+	printf("Для очистки списка напишите '10'.\n");
+	printf("Для создания нового массива напишите '11'.\n");
+	printf("Для выхода из программы напишите '0'.\n");
 	scanf("%i", &value);
 
-	if (value == 1)
+
+	switch (value)
 	{
+	case a:
 		printf("\nРазмер Вашего массива: %i\n", Lenght(str));
 		len = Lenght(str);
+		break;
 
+	case b:
 		printf("Введите i-ый индекс элемента: ");
 		scanf("%i", &index);
 		printf("Элемент по индексу: %c\n", GetByIndex(str, index));
+		break;
 
+	case c:
 		printf("Введите i-ый индекс элемента и сам элемент (вводите через пробел): ");
-		scanf("%i %c", &count, &c);
-		SetByIndex(str, c, count);
+		scanf("%i %c", &count, &ball);
+		SetByIndex(str, ball, count);
 		printf("Ваш массив в новом виде:");
 		PrintString(str);
 		printf("\n");
-		goto GT;
-	}
+		break;
 
-	else if (value == 2)
-	{
+	case d:
 		printf("\nВведите элемент для добавления его в конец массива: ");
 		clearerr(stdin);
 		fseek(stdin, 0, SEEK_SET);
@@ -48,37 +62,38 @@ int main()
 		AddToTheEnd(str, hud);
 		printf("Массив, с вашим элементов в конце: ");
 		PrintString(str);
+		break;
 
+	case e:
 		printf("Введите i-ый индекс элемента и сам элемент, чтобы добавить его после i-ого: ");
 		scanf("%i %c", &z, &x);
 		AddNewItem(str, z, x);
 		printf("Массив после добавления нового элемента: ");
 		PrintString(str);
+		break;
 
+	case f:
 		printf("Введите индекс i-ого элемента для того, чтобы его удалить: ");
 		scanf("%i", &ind);
 		DeleteItem(str, ind);
 		printf("Элемент удален: ");
 		PrintString(str);
 		printf("\n");
-		goto GT;
-	}
+		break;
 
-	else if (value == 3)
-	{
-		printf("\nНапишите '1' для удаления последнего элемента массива или '0' и ваш массив останется в прежней форме: ");
-		clearerr(stdin);
-		fseek(stdin, 0, SEEK_SET);
-		scanf("%i", &boom);
-		if (boom == 1)
-		{
-			DeleteLast(str);
-			printf("Последний элемент Вашего массива был удален: ");
-			PrintString(str);
-		}
-		else
-			printf("Последний элемент не был удален\n");
+	case g:
+		DeleteLast(str);
+		printf("Последний элемент Вашего массива был удален: ");
+		PrintString(str);
+		break;
 
+	case h:
+		Sort(str, &function);
+		printf("Ваша строка отсортирована: ");
+		PrintString(str);
+		break;
+
+	case i:
 		printf("Введите Новый массив типа char: ");
 		clearerr(stdin);
 		fseek(stdin, 0, SEEK_SET);
@@ -87,34 +102,26 @@ int main()
 		Sex(str, str1);
 		printf("Два массива объединены: ");
 		PrintString(str);
+		break;
 
-		printf("Отсортировать массив, руководствуюясь тфблицей ASCII? ('1' - Да, '0' - Нет): ");
-		scanf("%i", &sort);
-		Sort(str, &function);
-		printf("Ваша строка отсортирована: ");
-		PrintString(str);
+	case j:
+		DeleteAll(str, len);
+		break;
 
-		printf("Хотите удалить весь массив? (Нажмите '1', если хотите) ");
-		scanf("%i", &del);
-		if (del == 1)
-			DeleteAll(str);
-		goto GT;
-	}
-
-	else if (value == 4)
-	{
+	case new:
 		free(str);
 		goto CreateStr;
-	}
+		break;
 
-	else if (value == 0)
+	case end:
 		return 0;
+		break;
 
-	else
-	{
+	default:
 		printf("Неккоректный ввод");
-		goto GT;
+		break;
+
 	}
-	
+	goto GT;
 	return 0;
 }
