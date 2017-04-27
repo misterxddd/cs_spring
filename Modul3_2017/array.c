@@ -111,7 +111,6 @@ void AddNewItem(string * str, int index, char symbol)
 	acc->next = acc1;
 }
 
-
 void DeleteItem(string * str, int index)
 {
 	int count = 1;
