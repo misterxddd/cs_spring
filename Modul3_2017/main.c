@@ -75,7 +75,9 @@ int main()
 	case f:
 		printf("Введите индекс i-ого элемента для того, чтобы его удалить: ");
 		scanf("%i", &ind);
-		DeleteItem(str, ind);
+		if (ind == 1)
+			str = str->next;
+		else DeleteItem(str, ind);
 		printf("Элемент удален: ");
 		PrintString(str);
 		printf("\n");
