@@ -82,7 +82,7 @@ void SetByIndex(string * str, char symbol, int index)
 
 void AddToTheEnd(string * str, char symbol)
 {
-	string * acc = NULL;
+	string * acc;
 	while (str)
 	{
 		acc = str;
@@ -115,9 +115,9 @@ void AddNewItem(string * str, int index, char symbol)
 void DeleteItem(string * str, int index)
 {
 	int count = 1;
-	string * acc = NULL;
-	string * acc1 = NULL;
-	string * acc2 = NULL;
+	string * acc;
+	string * acc1;
+	string * acc2;
 	string * acc3 = str;
 	while (str)
 	{
@@ -131,6 +131,7 @@ void DeleteItem(string * str, int index)
 		count++;
 		str = str->next;
 	}
+
 	while (acc3)
 	{
 		if (count == (index - 2))
@@ -148,7 +149,7 @@ void DeleteItem(string * str, int index)
 
 void DeleteLast(string * str)
 {
-	string * acc = NULL;
+	string * acc;
 	string * acc1 = str;
 	while (str)
 	{
@@ -195,7 +196,7 @@ void DeleteAll(string * str)
 
 void Sex(string * str, string * str1)
 {
-	string * acc = NULL;
+	string * acc;
 	while (str)
 	{
 		acc = str;
@@ -219,7 +220,7 @@ void function(char * symbol1, char * symbol2)
 
 void Sort(string * str, void(*function)(char*, char*))
 {
-	string * acc = NULL;
+	string * acc;
 	string * copystr = str;
 	int i = 0;
 	int j = 0;
