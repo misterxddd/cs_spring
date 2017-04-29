@@ -19,7 +19,7 @@ void AddToTheEnd(string * _string, char _symbol);
 void AddNewItem(string * _string, int _index, char _symbol);
 void DeleteItem(string * _string, int _index);
 void DeleteLast(string * _string);
-void DeleteAll(string * _string, int _lenght);
+void DeleteAll(string * _string);
 void Sort(string * _string, void(*function)(char*, char*));
 void Sex(string * _string1, string * _string2);
 
