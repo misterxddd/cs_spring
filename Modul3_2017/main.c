@@ -107,7 +107,7 @@ int main()
 		break;
 
 	case j:
-		DeleteAll(str, len);
+		DeleteAll(str);
 		break;
 
 	case new:
