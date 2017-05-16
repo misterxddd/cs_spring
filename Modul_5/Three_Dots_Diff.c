@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <conio.h>
 #include <math.h>
 
 float mainFunction(float x) {
@@ -35,6 +34,5 @@ int main()
 		x = x + h;
 		printf(string, D);
 	}
-	_getch();
 	return 0;
 }
